@@ -1,0 +1,6 @@
+.env
+pihole/
+dev/
+var/
+unbound.pid
+unbound.log
