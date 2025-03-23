@@ -1,9 +1,9 @@
 ---
 services:
   pihole:
-    image: pihole/pihole:latest
-    container_name: pihole
-    hostname: pihole
+    image: "pihole/pihole:latest"
+    container_name: "pihole"
+    hostname: "pihole"
     ports:
       - "53:53/tcp"
       - "53:53/udp"
@@ -15,12 +15,12 @@ services:
       - "FTLCONF_DNS_UPSTREAMS=unbound#5335"
     volumes:
       - "./config/pihole/:/etc/pihole/"
-    restart: unless-stopped
+    restart: "unless-stopped"
 
   unbound:
-    image: mvance/unbound:latest
-    container_name: unbound
-    hostname: unbound
+    image: "mvance/unbound:latest"
+    container_name: "unbound"
+    hostname: "unbound"
     volumes:
       - "./config/unbound/:/opt/unbound/etc/unbound/"
-    restart: unless-stopped
+    restart: "unless-stopped"
